@@ -46,6 +46,6 @@ let data = [{
     YAS:33, 
     'ALDIGI MAAS':12000, 
     CINSIYETI: 'ERKEK' 
-}, 
-
+}
 ] 
+module.exports = data

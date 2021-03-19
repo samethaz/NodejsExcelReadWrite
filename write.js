@@ -1,7 +1,10 @@
-const fs = require('fs');
-var data = fs.readFileSync('Data.js', 'utf-8');
-var xlsx = require('xlsx');
-let file = xlsx.readFile("./OrnekDosya.xlsx")
-var newWs =xlsx.utils.sheet_to_json(data);
-xlsx.utils.book_append_sheet(file,newWs,"New Data")
-xlsx.writeFile(file,"./OrnekDosya.xlsx")
+
+const xlsx = require("xlsx"); //xlsx modülünü import etmek.
+let dataJs = require("./data"); //data.js yi import etmek
+let newBook = xlsx.utils.book_new()
+let newSheet = xlsx.utils.json_to_sheet(dataJs) //json yapılarını xlsx e çevirme
+xlsx.utils.book_append_sheet(newBook, newSheet, "User") //yeni sheet eklemek
+xlsx.writeFile(newBook, "./OrnekDosya.xlsx"); //exceli dosyanısını yeniden yazıyor.
+
+
+
