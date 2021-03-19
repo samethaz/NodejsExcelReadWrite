@@ -1,3 +1,6 @@
+/**
+ * Excel dosyasini okuyup konsol ekranina yazdirma 
+ */
 const xlsx = require('xlsx');
 let file = xlsx.readFile("./OrnekDosya.xlsx")
 var sheet_name_list = file.SheetNames;
